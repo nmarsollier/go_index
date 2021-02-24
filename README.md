@@ -6,9 +6,7 @@ Si ya leíste la documentación oficial de Go, y alguno que otro tutoriales, per
 
 Este es una serie de notas sobre patrones de programación y arquitectura aplicadas a Go, mayormente para ser usadas en microservicios y sistemas pequeños, donde planteo estrategias no tan convencionales de programación en Go.
 
-Y digo no tan convencionales, porque son tips y soluciones no tan populares, pero muy efectivas, aunque no por eso carecen de fundamentos, sino mas bien todo lo contrario, intento aprovechar toda mi experiencia para proponer un balance ideal entre código sencillo, eficiente y mantenible.
-
-En general son ejemplos que ilustran un concepto en particular, pudiendo no respetar otros patrones que no se discuten en esos ejemplos. 
+Y digo no tan convencionales, porque son tips y soluciones no tan populares, pero muy efectivas, aunque no por eso carecen de fundamentos, sino mas bien todo lo contrario, intento proponer un balance ideal entre código sencillo, eficiente y mantenible.
 
 Son ideas pensadas para resolver problemas específicos o en contextos puntuales, por lo tanto no generalizar al leer las notas. 
 
@@ -18,6 +16,8 @@ Un buen arquitecto es aquel que diseña arquitecturas sencillas que resuelven el
 ---
 
 ## Tabla de Contenidos
+
+En general en cada apartado ilustro un concepto en particular, pudiendo no respetar otros que no se discuten en esos ejemplos. Recomiendo leerlos en orden, para obtener un contexto adecuado en los capítulos posteriores.
 
 [DI y IoC](https://github.com/nmarsollier/go_di_ioc)
 
