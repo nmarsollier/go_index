@@ -39,13 +39,11 @@ Con la necesidad de escalara en forma de Microservicios, Go se ha vuelto popular
 
 Estamos viviendo momentos donde existe demasiada información, muchos autores reescriben la rueda, creando conceptos y soluciones extravagantes, y generalmente son mal interpretadas.
 
-La programación orientada a objetos vivió momentos muy obscuros donde presionaron ideas que no ayudan demasiado y pero sin embargo se siguen viendo sus efectos negativos.
-
-Lineamientos como Clean Architecture, Domain Driven Design, y muchos otros que intentan simplificar las cosas, poner los pies en la tierra, pero exponen información sin un contexto, y con tanto ruido en el medio los programadores terminan con mas problemas que soluciones.
+Lineamientos como Clean Architecture, Domain Driven Design, son geniales, intentan poner los pies en la tierra, pero exponen información sin un contexto simple de definir, y con tanto ruido en el medio los programadores terminan con mas problemas que soluciones.
 
 Microservicios nos abre un mundo nuevo, cada microservicio es un sistema que ataca un problema puntual, esto nos beneficia en gran medida, porque nuestro microservicio expone una interfaz y nos da libertar de implementar internamente usando el código justo y necesario que resuelve el problema.
 
-Terminamos abarrotados, implementando patrones que resuelven problemas que no tenemos, pensamos en diseños hexagonales, desacoplamos el código, encapsulamos negocio, preparamos nuestra app para que sea políglota, y muchas otras cosas "para que escale bien", que son precisamente los problemas que en microservicios precisamente se resuelven desde la arquitectura y no desde el microservicio puntual.
+Si no tenemos en cuenta el contexto de un microservicio y programamos con la misma receta, terminamos abarrotados, implementando patrones que resuelven problemas que no tenemos, pensamos en diseños hexagonales, desacoplamos el código, encapsulamos negocio, preparamos nuestra app para que sea políglota, y muchas otras cosas "para que escale bien", que son precisamente los problemas que en microservicios se resuelven desde la arquitectura y no desde un microservicio puntual.
 
 El error mas común, es que muchos consideran que mientras mas patrones pongamos en nuestro código, mejor se vuelve, las ideas son buenas cuando resuelven un problema, si no tenemos ese problema, la idea no sirve. 
 
