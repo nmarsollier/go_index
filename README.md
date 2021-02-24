@@ -24,6 +24,8 @@ Un buen arquitecto es el diseña arquitecturas de forma elegante y sencilla.
 
 [Un poco mas declarativos](https://github.com/nmarsollier/go_declarative)
 
+[Builder Pattern in Router](https://github.com/nmarsollier/go_router_builder)
+
 ## Mas
 
 Un microservicio simple, pero que expresa algunas de las notas en este tutorial es [imagego](https://github.com/nmarsollier/imagego).
