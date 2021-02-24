@@ -29,9 +29,9 @@ En general en cada apartado ilustro un concepto en particular, pudiendo no respe
 
 [Un poco mas declarativos](https://github.com/nmarsollier/go_declarative)
 
-[Builder Pattern in Router](https://github.com/nmarsollier/go_router_builder)
+[Builder Pattern en Router](https://github.com/nmarsollier/go_router_builder)
 
-*Estructuras escalable* (En preparación) 
+*Estructuras escalables* (En preparación) 
 
 ## Que me motiva a escribir estas notas ?
 
