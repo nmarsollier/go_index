@@ -1,4 +1,4 @@
-# Una guiá sobe GO en ambientes de microservicios
+# Una guía sobe GO en ambientes de microservicios
 
 Go es un lenguaje muy particular, es y no es muchas cosas, tiene una comunidad muy compleja de entender.
 
