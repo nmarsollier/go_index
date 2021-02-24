@@ -52,4 +52,4 @@ El error mas común, es que muchos consideran que mientras mas patrones pongamos
 
 Un microservicio simple, pero que expresa algunas de las notas en este tutorial es [imagego](https://github.com/nmarsollier/imagego).
 
-Puedes ver algunas notas sobre mi sitio en [el indice](https://github.com/nmarsollier/index).
+Puedes ver algunas notas sobre mi perfil en [el indice](https://github.com/nmarsollier/index).
