@@ -2,7 +2,7 @@
 
 Go es un lenguaje muy particular, es y no es muchas cosas, tiene una comunidad muy compleja de entender.
 
-Si ya leíste la documentación oficial de Go, y alguno que otro tutoriales, pero no sabes bien como desarrollar en Go, este sitio puede ayudarte.
+Si ya leíste la documentación oficial de Go, y algún que otro tutorial, pero no sabes bien como desarrollar en Go, este sitio puede ayudarte.
 
 Este es una serie de notas sobre patrones de programación y arquitectura aplicadas a Go, mayormente para ser usadas en microservicios y sistemas pequeños, donde planteo estrategias no tan convencionales de programación en Go.
 
@@ -37,7 +37,7 @@ En general en cada apartado ilustro un concepto en particular, pudiendo no respe
 
 ## Que me motiva a escribir estas notas ?
 
-Con la necesidad de escalara en forma de Microservicios, Go se ha vuelto popular. Sin embargo existe un vacío enorme sobre como implementar correctamente un microservicio.
+Con la necesidad de escalar en forma de Microservicios, Go se ha vuelto popular. Sin embargo existe un vacío enorme sobre como implementar correctamente un microservicio.
 
 Estamos viviendo momentos donde existe demasiada información, muchos autores reescriben la rueda, creando conceptos y soluciones extravagantes, y generalmente son mal interpretadas.
 
