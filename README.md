@@ -33,6 +33,8 @@ En general en cada apartado ilustro un concepto en particular, pudiendo no respe
 
 [Polimorfismo con Funciones](https://github.com/nmarsollier/go_functional_polimorfism)
 
+[Estructuras de Directorios](https://github.com/nmarsollier/go_directories)
+
 *Estructuras escalables* (En preparación) 
 
 ## Que me motiva a escribir estas notas ?
