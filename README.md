@@ -1,3 +1,5 @@
+[English version](https://github.com/nmarsollier/go_index/blob/main/README_en.md)
+
 # Una guía sobe GO en ambientes de microservicios
 
 Go es un lenguaje muy particular, es y no es muchas cosas, tiene una comunidad muy compleja de entender.
@@ -19,23 +21,21 @@ Un buen arquitecto es aquel que diseña arquitecturas sencillas que resuelven el
 
 En general en cada apartado ilustro un concepto en particular, pudiendo no respetar otros que no se discuten en esos ejemplos. Recomiendo leerlos en orden, para obtener un contexto adecuado en los capítulos posteriores.
 
-[DI y IoC](https://github.com/nmarsollier/go_di_ioc)
+[DI e IoC](https://github.com/nmarsollier/go_di_ioc/blob/main/README.md)
 
-[Un enfoque mas funcional](https://github.com/nmarsollier/go_functional)
+[Un enfoque mas funcional](https://github.com/nmarsollier/go_functional/blob/main/README.md)
 
-[REST Controllers en go](https://github.com/nmarsollier/go_rest_controller)
+[REST Controllers en go](https://github.com/nmarsollier/go_rest_controller/blob/main/README.md)
 
-[Router Design Pattern](https://github.com/nmarsollier/go_router_design)
+[Router Design Pattern](https://github.com/nmarsollier/go_router_design/blob/main/README.md)
 
-[Un poco mas declarativos](https://github.com/nmarsollier/go_declarative)
+[Un poco mas declarativos](https://github.com/nmarsollier/go_declarative/blob/main/README.md)
 
-[Builder Pattern en Router](https://github.com/nmarsollier/go_router_builder)
+[Builder Pattern en Router](https://github.com/nmarsollier/go_router_builder/blob/main/README.md)
 
-[Polimorfismo con Funciones](https://github.com/nmarsollier/go_functional_polimorfism)
+[Polimorfismo con Funciones](https://github.com/nmarsollier/go_functional_polimorfism/blob/main/README.md)
 
-[Estructuras de Directorios](https://github.com/nmarsollier/go_directories)
-
-*Estructuras escalables* (En preparación) 
+[Estructuras de Directorios](https://github.com/nmarsollier/go_directories/blob/main/README.md)
 
 ## Que me motiva a escribir estas notas ?
 
