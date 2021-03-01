@@ -54,6 +54,10 @@ El error mas común, es que muchos consideran que mientras mas patrones pongamos
 
 ## Mas
 
-Un microservicio simple, pero que expresa algunas de las notas en este tutorial es [imagego](https://github.com/nmarsollier/imagego).
+Ejemplos de microservicios en Go que siguen las notas en este documento : 
+
+[imagego](https://github.com/nmarsollier/imagego).
+
+[authgo](https://github.com/nmarsollier/authgo).
 
 Puedes ver algunas notas sobre mi perfil en [el indice](https://github.com/nmarsollier/index).

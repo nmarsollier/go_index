@@ -53,3 +53,10 @@ But if we code without the microservice context in ming, and we use the same rec
 
 The most common mistake, is to use too much patterns thinking that more is better, the patterns are good when they solve a problem, without the problem, the pattern is wrong.
 
+## Code samples
+
+Academic Microservices samples using the notes of this guide : 
+
+[imagego](https://github.com/nmarsollier/imagego).
+
+[authgo](https://github.com/nmarsollier/authgo).
