@@ -39,6 +39,8 @@ I recommend to read them in the correct order.
 
 [Directory Structure](https://github.com/nmarsollier/go_directories/blob/main/README_en.md)
 
+[A correct way to cache](https://github.com/nmarsollier/go_cache/blob/main/README_en.md)
+
 ## Why I'm writing these notes ?
 
 With the necessity to scale in microservices environments, go has become very popular. But I see a huge vacuum about how to implement a single microservice.
