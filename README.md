@@ -28,7 +28,7 @@ En general en cada apartado ilustro un concepto en particular, pudiendo no respe
 
 [Un enfoque mas funcional](https://github.com/nmarsollier/go_functional/blob/main/README.md)
 
-> Go no es Orientado a Objetos - Beneficios de prog. funcional - Estrategias de mock
+> Go no es Orientado a Objetos - Beneficios de prog. funcional - Estrategias de mock sin interfaces innecesarias
 
 [REST Controllers en go](https://github.com/nmarsollier/go_rest_controller/blob/main/README.md)
 
