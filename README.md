@@ -10,10 +10,11 @@ Este es una serie de notas sobre patrones de programación y arquitectura aplica
 
 Y digo no tan convencionales, porque son tips y soluciones no tan populares, pero muy efectivas, aunque no por eso carecen de fundamentos, sino mas bien todo lo contrario, intento proponer un balance ideal entre código sencillo, eficiente y mantenible.
 
-Son ideas pensadas para resolver problemas específicos o en contextos puntuales, por lo tanto no generalizar al leer las notas. 
+Son ideas pensadas para resolver problemas específicos o en contextos puntuales, por lo tanto no generalizar al leer las notas.
 
 ---
-Un buen arquitecto es aquel que diseña arquitecturas sencillas que resuelven el problema elegantemente, que todos pueden entender. 
+
+Un buen arquitecto es aquel que diseña arquitecturas sencillas que resuelven el problema elegantemente, que todos pueden entender.
 
 ---
 
@@ -23,21 +24,39 @@ En general en cada apartado ilustro un concepto en particular, pudiendo no respe
 
 [DI e IoC](https://github.com/nmarsollier/go_di_ioc/blob/main/README.md)
 
+> De donde sale la inyección de dependencias ? - Porque no sirve en Go? - Estrategias mas simples ?
+
 [Un enfoque mas funcional](https://github.com/nmarsollier/go_functional/blob/main/README.md)
+
+> Go no es Orientado a Objetos - Beneficios de prog. funcional - Estrategias de mock
 
 [REST Controllers en go](https://github.com/nmarsollier/go_rest_controller/blob/main/README.md)
 
+> El MVC simple y bien explicado - Organizar correctamente nuestros controllers - Organizar el código desde el controller - REST en servicios de negocio
+
 [Router Design Pattern](https://github.com/nmarsollier/go_router_design/blob/main/README.md)
+
+> Que es el Router Pattern - Porque digo que no lo aprovechamos totalmente - Estrategias
 
 [Un poco mas declarativos](https://github.com/nmarsollier/go_declarative/blob/main/README.md)
 
+> Que es ser declarativo y como le podemos sacar ventaja en simplificar el código
+
 [Builder Pattern en Router](https://github.com/nmarsollier/go_router_builder/blob/main/README.md)
+
+> Como podemos aprovechar el Router mucho mas usándolo como Builder - Procesamiento en paralelo muy simple
 
 [Polimorfismo con Funciones](https://github.com/nmarsollier/go_functional_polimorfism/blob/main/README.md)
 
+> Evitando interfaces innecesarias - Estrategias para hacer polimorfismo con funciones
+
 [Estructuras de Directorios](https://github.com/nmarsollier/go_directories/blob/main/README.md)
 
+> Dividir en capas el código - Como organizar el código inteligentemente para que encontremos cada cosa en su lugar.
+
 [Una forma adecuada de hacer cache](https://github.com/nmarsollier/go_cache/blob/main/README.md)
+
+> Hacer cache no es nada sencillo, se explican problemas comunes y se da una solución de cache para un caso muy puntual, cachear una respuesta remota.
 
 ## Que me motiva a escribir estas notas ?
 
@@ -51,15 +70,18 @@ Microservicios nos abre un mundo nuevo, cada microservicio es un sistema que ata
 
 Si no tenemos en cuenta el contexto de un microservicio y programamos con la misma receta, terminamos abarrotados, implementando patrones que resuelven problemas que no tenemos, pensamos en diseños hexagonales, desacoplamos el código, encapsulamos negocio, preparamos nuestra app para que sea políglota, y muchas otras cosas "para que escale bien", que son precisamente los problemas que en microservicios se resuelven desde la arquitectura y no desde un microservicio puntual.
 
-El error mas común, es que muchos consideran que mientras mas patrones pongamos en nuestro código, mejor se vuelve, las ideas son buenas cuando resuelven un problema, si no tenemos ese problema, la idea no sirve. 
-
+El error mas común, es que muchos consideran que mientras mas patrones pongamos en nuestro código, mejor se vuelve, las ideas son buenas cuando resuelven un problema, si no tenemos ese problema, la idea no sirve.
 
 ## Mas
 
-Ejemplos de microservicios en Go que siguen las notas en este documento : 
+Ejemplos de microservicios en Go que siguen las notas en este documento :
 
 [imagego](https://github.com/nmarsollier/imagego).
 
 [authgo](https://github.com/nmarsollier/authgo).
 
 Puedes ver algunas notas sobre mi perfil en [el indice](https://github.com/nmarsollier/index).
+
+```
+
+```
