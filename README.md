@@ -30,6 +30,10 @@ En general en cada apartado ilustro un concepto en particular, pudiendo no respe
 
 > Go no es Orientado a Objetos - Beneficios de prog. funcional - Estrategias de mock sin interfaces innecesarias
 
+[Repasemos DI e IoC funcional](https://github.com/nmarsollier/go_di_ioc2/blob/main/README.md)
+
+> En programación funcional, la inyección de dependencias no existe como en OO.
+
 [REST Controllers en go](https://github.com/nmarsollier/go_rest_controller/blob/main/README.md)
 
 > El MVC simple y bien explicado - Organizar correctamente nuestros controllers - Organizar el código desde el controller - REST en servicios de negocio
