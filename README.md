@@ -12,7 +12,7 @@ Un buen arquitecto es aquel que diseña arquitecturas sencillas que resuelven el
 
 ## Tabla de Contenidos
 
-En general en cada apartado ilustro un concepto en particular, pudiendo no respetar otros que no se discuten en esos ejemplos. Recomiendo leerlos en orden, para obtener un contexto adecuado en los capítulos posteriores.
+Cada entrada es un repositorio que se enfoca en ciertos conceptos en particular, pudiendo no respetar otros que no se discuten en esos ejemplos. Recomiendo leerlos en orden, para obtener un contexto adecuado en los capítulos posteriores.
 
 [DI e IoC](https://github.com/nmarsollier/go_di_ioc/blob/main/README.md)
 
