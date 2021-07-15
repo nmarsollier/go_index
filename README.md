@@ -1,6 +1,6 @@
 [English version](https://github.com/nmarsollier/go_index/blob/main/README_en.md)
 
-# Una guía sobe GO en ambientes de microservicios
+# Una guía sobe Go en ambientes de microservicios
 
 Este es una serie de notas sobre patrones de programación y arquitectura aplicadas a Go, mayormente para ser usadas en microservicios y sistemas pequeños, donde planteo tips y soluciones no tan populares, muy efectivas, que no por eso carecen de fundamentos, sino mas bien todo lo contrario, intento proponer un balance ideal entre código sencillo, eficiente y mantenible.
 
@@ -26,7 +26,7 @@ Cada entrada es un repositorio que se enfoca en ciertos conceptos en particular,
 
 > En programación funcional, la inyección de dependencias no existe como en OO.
 
-[REST Controllers en go](https://github.com/nmarsollier/go_rest_controller/blob/main/README.md)
+[REST Controllers en Go](https://github.com/nmarsollier/go_rest_controller/blob/main/README.md)
 
 > El MVC simple y bien explicado - Organizar correctamente nuestros controllers - Organizar el código desde el controller - REST en servicios de negocio
 
