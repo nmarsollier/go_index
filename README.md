@@ -2,19 +2,11 @@
 
 # Una guía sobe GO en ambientes de microservicios
 
-Go es un lenguaje muy particular, es y no es muchas cosas, tiene una comunidad muy compleja de entender.
-
-Si ya leíste la documentación oficial de Go, y algún que otro tutorial, pero no sabes bien como desarrollar en Go, este sitio puede ayudarte.
-
-Este es una serie de notas sobre patrones de programación y arquitectura aplicadas a Go, mayormente para ser usadas en microservicios y sistemas pequeños, donde planteo estrategias no tan convencionales de programación en Go.
-
-Y digo no tan convencionales, porque son tips y soluciones no tan populares, pero muy efectivas, aunque no por eso carecen de fundamentos, sino mas bien todo lo contrario, intento proponer un balance ideal entre código sencillo, eficiente y mantenible.
-
-Son ideas pensadas para resolver problemas específicos o en contextos puntuales, por lo tanto no generalizar al leer las notas.
+Este es una serie de notas sobre patrones de programación y arquitectura aplicadas a Go, mayormente para ser usadas en microservicios y sistemas pequeños, donde planteo tips y soluciones no tan populares, muy efectivas, que no por eso carecen de fundamentos, sino mas bien todo lo contrario, intento proponer un balance ideal entre código sencillo, eficiente y mantenible.
 
 ---
 
-Un buen arquitecto es aquel que diseña arquitecturas sencillas que resuelven el problema elegantemente, que todos pueden entender.
+Un buen arquitecto es aquel que diseña arquitecturas sencillas que resuelven el problema tan elegantemente, que todos pueden entender.
 
 ---
 
@@ -64,7 +56,11 @@ En general en cada apartado ilustro un concepto en particular, pudiendo no respe
 
 ## Que me motiva a escribir estas notas ?
 
-Con la necesidad de escalar en forma de Microservicios, Go se ha vuelto popular. Sin embargo existe un vacío enorme sobre como implementar correctamente un microservicio.
+Go es un lenguaje muy particular, es y no es muchas cosas, tiene una comunidad muy compleja de entender.
+
+Si ya leíste la documentación oficial de Go, y algún que otro tutorial, pero no sabes bien como desarrollar en Go, este sitio puede ayudarte.
+
+En arquitecturas de Microservicios, Go se ha vuelto popular. Sin embargo existe un vacío enorme sobre como implementar correctamente un microservicio.
 
 Estamos viviendo momentos donde existe demasiada información, muchos autores reescriben la rueda, creando conceptos y soluciones extravagantes, y generalmente son mal interpretadas.
 
