@@ -72,6 +72,8 @@ Si no tenemos en cuenta el contexto de un microservicio y programamos con la mis
 
 El error mas común, es que muchos consideran que mientras mas patrones pongamos en nuestro código, mejor se vuelve, las ideas son buenas cuando resuelven un problema, si no tenemos ese problema, la idea no sirve.
 
+> La forma mas facil de llegar de un punto a otro es en linea recta.
+
 ## Mas
 
 Ejemplos de microservicios en Go que siguen las notas en este documento :
