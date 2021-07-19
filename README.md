@@ -42,6 +42,10 @@ Cada entrada es un repositorio que se enfoca en ciertos conceptos en particular,
 
 > Como podemos aprovechar el Router mucho mas usándolo como Builder - Procesamiento en paralelo muy simple
 
+[Deiniendo cross libs](https://github.com/nmarsollier/go_libs/blob/main/README.md)
+
+> Consejos para definir librerías compartidas y algunas buenas practicas para convivir con terceros
+
 [Polimorfismo con Funciones](https://github.com/nmarsollier/go_functional_polimorfism/blob/main/README.md)
 
 > Evitando interfaces innecesarias - Estrategias para hacer polimorfismo con funciones
