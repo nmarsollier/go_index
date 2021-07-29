@@ -42,7 +42,7 @@ Cada entrada es un repositorio que se enfoca en ciertos conceptos en particular,
 
 > Como podemos aprovechar el Router mucho mas usándolo como Builder - Procesamiento en paralelo muy simple
 
-[Deiniendo cross libs](https://github.com/nmarsollier/go_libs/blob/main/README.md)
+[Definiendo cross libs](https://github.com/nmarsollier/go_libs/blob/main/README.md)
 
 > Consejos para definir librerías compartidas y algunas buenas practicas para convivir con terceros
 
