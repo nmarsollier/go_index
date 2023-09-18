@@ -86,6 +86,8 @@ Ejemplos de microservicios en Go que siguen las notas en este documento :
 
 [authgo](https://github.com/nmarsollier/authgo).
 
+[resourcesgo][https://github.com/nmarsollier/resourcesgo]
+
 Puedes ver algunas notas sobre mi perfil en [el indice](https://github.com/nmarsollier/index).
 
 ```
