@@ -18,6 +18,17 @@ A good architect is the one that designs architectures that solve problems so el
 
 ---
 
+## Code samples
+
+Academic Microservices samples using the notes of this guide :
+
+[imagego](https://github.com/nmarsollier/imagego).
+
+[authgo](https://github.com/nmarsollier/authgo).
+
+[resourcesgo](https://github.com/nmarsollier/resourcesgo)
+
+
 ## Content Table
 
 In all these topis I talk about a particular concept, and sometimes to focus in a concept, i could not respect other important concept, so please just evaluate the concept that I'm expressing in the topic. Also note that each repository contains code, so you can see samples.
@@ -73,11 +84,3 @@ Microservices opens a new world, each single microservice si a systems that cove
 But if we code without the microservice context in ming, and we use the same recipe used for monolyths, we ends crowded, implementing patterns that solves problems that we don´t have, we adopt hexagonal designs, we decouple too many layers, we prepare microservices to scale, with polyglot databases, and things like that, and many of those things are things that the microservice architecture solves by itself.
 
 The most common mistake, is to use too much patterns thinking that more is better, the patterns are good when they solve a problem, without the problem, the pattern is wrong.
-
-## Code samples
-
-Academic Microservices samples using the notes of this guide :
-
-[imagego](https://github.com/nmarsollier/imagego).
-
-[authgo](https://github.com/nmarsollier/authgo).
