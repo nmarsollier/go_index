@@ -92,4 +92,4 @@ Lo mas probable que la próxima vez que enfrentes un caso de polimorfismo te pre
 
 Esta es una serie de notas sobre patrones simples de programación en GO.
 
-[Tabla de Contenidos](https://github.com/nmarsollier/go_index/blob/main/README.md)
+[Tabla de Contenidos](../README.md)

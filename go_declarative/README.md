@@ -253,4 +253,4 @@ Creo que es importante ir revisando estas estrategias, en el futuro de Go nos ha
 
 Esta es una serie de notas sobre patrones simples de programación en GO.
 
-[Tabla de Contenidos](https://github.com/nmarsollier/go_index/blob/main/README.md)
+[Tabla de Contenidos](../README.md)

@@ -209,4 +209,4 @@ De esta forma controlamos, encapsulamos y desacoplamos la estrategia de cache en
 
 Esta es una serie de notas sobre patrones simples de programación en GO.
 
-[Tabla de Contenidos](https://github.com/nmarsollier/go_index/blob/main/README.md)
+[Tabla de Contenidos](../README.md)

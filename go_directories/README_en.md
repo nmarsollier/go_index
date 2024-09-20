@@ -127,4 +127,4 @@ Example: feature flags remote reading, that need to be checked in different modu
 
 This is a series of notes about advanced Go patterns, with a really simple implementation.
 
-[Content Table](https://github.com/nmarsollier/go_index/blob/main/README_en.md)
+[Content Table](../README_en.md)

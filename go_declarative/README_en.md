@@ -248,4 +248,4 @@ It's also good to start from some point like library https://github.com/jucardi/
 
 This is a series of notes about advanced Go patterns, with a really simple implementation.
 
-[Content Table](https://github.com/nmarsollier/go_index/blob/main/README_en.md)
+[Content Table](../README_en.md)

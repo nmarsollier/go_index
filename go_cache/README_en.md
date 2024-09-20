@@ -394,4 +394,4 @@ And that's it, we have a cache library to catch any value from remotes, and we c
 
 This is a series of notes about advanced Go patterns, with a really simple implementation.
 
-[Content Table](https://github.com/nmarsollier/go_index/blob/main/README_en.md)
+[Content Table](../README_en.md)

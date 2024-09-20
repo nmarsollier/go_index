@@ -219,4 +219,4 @@ Cuando tenemos DI por constructor, no necesariamente podríamos usar un Factory 
 
 Esta es una serie de tutoriales sobre patrones simples de programación en GO.
 
-[Tabla de Contenidos](https://github.com/nmarsollier/go_index/blob/main/README.md)
+[Tabla de Contenidos](../README.md)
