@@ -1,4 +1,4 @@
-[Version en Español](https://github.com/nmarsollier/go_index/blob/main/README.md)
+[Version en Español](README.md)
 
 # A guide to code Go microservices
 
@@ -28,46 +28,45 @@ Academic Microservices samples using the notes of this guide :
 
 [resourcesgo](https://github.com/nmarsollier/resourcesgo)
 
-
 ## Content Table
 
 In all these topis I talk about a particular concept, and sometimes to focus in a concept, i could not respect other important concept, so please just evaluate the concept that I'm expressing in the topic. Also note that each repository contains code, so you can see samples.
 
 I recommend to read them in the correct order.
 
-[DI and IoC](https://github.com/nmarsollier/go_di_ioc/blob/main/README_en.md)
+[DI and IoC](go_di_ioc/README_en.md)
 
 > Dependency Injection origins ? - Why it is not useful in Go? - Simpler strategies ?
 
-[A functional way](https://github.com/nmarsollier/go_functional/blob/main/README_en.md)
+[A functional way](go_functional/README_en.md)
 
 > Go is not Object Oriented - Benefit or functional style - Mocking strategies without interfaces
 
-[REST Controllers in Go](https://github.com/nmarsollier/go_rest_controller/blob/main/README_en.md)
+[REST Controllers in Go](go_rest_controller/README_en.md)
 
 > The MVC easy and well explained - Correct controller organization from controllers - business REST services
 
-[Router Design Pattern](https://github.com/nmarsollier/go_router_design/blob/main/README_en.md)
+[Router Design Pattern](go_router_design/README_en.md)
 
 > What is the Router Pattern - Why I say that we are not fully using it - Strategies
 
-[A little bit more declarative](https://github.com/nmarsollier/go_declarative/blob/main/README_en.md)
+[A little bit more declarative](go_declarative/README_en.md)
 
 > What is to be declarative ? - Hwo we can get the advantages of that ?
 
-[Builder Pattern in Router](https://github.com/nmarsollier/go_router_builder/blob/main/README_en.md)
+[Builder Pattern in Router](go_router_builder/README_en.md)
 
 > More advance use of the Router Pattern, using it as a Builder - A simpler parallel processing engine
 
-[Polymorphism in Functional Paradigm](https://github.com/nmarsollier/go_functional_polimorfism/blob/main/README_en.md)
+[Polymorphism in Functional Paradigm](go_functional_polimorfism/README_en.md)
 
 > Avoiding unwanted interfaces - Strategies of polymorphism in functional programming
 
-[Directory Structure](https://github.com/nmarsollier/go_directories/blob/main/README_en.md)
+[Directory Structure](go_directories/README_en.md)
 
 > Split the code in layers - How to organize the code intelligently so we can find each thing in their place.
 
-[A correct way to cache](https://github.com/nmarsollier/go_cache/blob/main/README_en.md)
+[A correct way to cache](go_cache/README_en.md)
 
 > Caching is not easy, I explain common cproblems of cache, and I present a solution to a common data remote cache strategy.
 

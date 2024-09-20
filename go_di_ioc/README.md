@@ -1,8 +1,8 @@
-[English version](https://github.com/nmarsollier/go_di_ioc/blob/main/README_en.md)
+[English version](README_en.md)
 
 # DI e IoC en GO
 
-Este repositorio plantea alternativas de manejo de dependencias, a la programación tradicional de un proyecto Go. 
+Este repositorio plantea alternativas de manejo de dependencias, a la programación tradicional de un proyecto Go.
 
 ## Mal uso de Inyección de Dependencias
 
@@ -14,7 +14,7 @@ La mayoría de los programadores recomiendan inyección de dependencias para sep
 
 En Go la estrategia mas común es la de Inyección de Dependencias pasada por Constructor.
 
-Nuestro código luce como el siguiente: 
+Nuestro código luce como el siguiente:
 
 ```go
 srv := service.NewService(dao.NewDao())
@@ -47,11 +47,11 @@ func (s HelloService) SayHello() string {
 
 Y esa es una buena practica, pero cuando las dependencias son realmente implementaciones que se ajusten a casos donde si se debe usar inyección de dependencias (ejemplo: Strategy pattern), aclarando que esta estrategia no está mal, el problema es cuando abusamos de ella en casos donde no es correcto usarse, en nuestros sistemas, la gran mayoria de dependencias no necesitan usar DI.
 
-Un uso como el anterior no desacopla realmente, todo lo contrario, terminamos acoplando mucho mas, nuestro código debe definir métodos bootstraps en lugares donde no deberían estar, acoplando todo el negocio en un archivo main.go por ejemplo. 
+Un uso como el anterior no desacopla realmente, todo lo contrario, terminamos acoplando mucho mas, nuestro código debe definir métodos bootstraps en lugares donde no deberían estar, acoplando todo el negocio en un archivo main.go por ejemplo.
 
 Ademas de acoplar, exponemos los detalles internos de nuestras implementaciones, algo que deberia estar encapsulado.
 
-Podemos revisar las raices de programacion orientada a objetos y darnos cuenta que incluso iría en contra del principio de [Information Expert](https://en.wikipedia.org/wiki/GRASP_(object-oriented_design)#Information_expert), que nos dice que las dependencias deben ser instanciadas en el lugar donde se tiene la informacion, de modo tal que por ejemplo crear las dependencias de un servicio en la capa de controladores, genera acoplamiento y nuestro código ya no seria cohesivo.
+Podemos revisar las raices de programacion orientada a objetos y darnos cuenta que incluso iría en contra del principio de [Information Expert](<https://en.wikipedia.org/wiki/GRASP_(object-oriented_design)#Information_expert>), que nos dice que las dependencias deben ser instanciadas en el lugar donde se tiene la informacion, de modo tal que por ejemplo crear las dependencias de un servicio en la capa de controladores, genera acoplamiento y nuestro código ya no seria cohesivo.
 
 La realidad, es que se usa porque nos da la posibilidad de mockear esas dependencias para realizar buenos testings. Sin embargo existen muchas alternativas que podemos usar sin llegar a usar DI.
 
@@ -79,7 +79,7 @@ srv := service.NewService()
 fmt.Println(srv.SayHello())
 ```
 
-Sino mas bien el mismo service se encarga de crear el dao que corresponda según el contexto. 
+Sino mas bien el mismo service se encarga de crear el dao que corresponda según el contexto.
 
 Esto esta muy en linea con el patrón experto.
 
@@ -93,7 +93,7 @@ func NewService() *HelloService {
 ```
 
 Donde dao.NewDao() es exactamente esta función que nos devuelve una dependencia, haciendo posible la inversión de control.
- 
+
 ```go
 // NewDao es el factory
 func NewDao() *HelloDao {
@@ -101,7 +101,7 @@ func NewDao() *HelloDao {
 }
 ```
 
-Si existe una estrategia de construcción, digamos, singleton, pool de objetos, instancias individuales, o la que sea, esa función se hará cargo. 
+Si existe una estrategia de construcción, digamos, singleton, pool de objetos, instancias individuales, o la que sea, esa función se hará cargo.
 A su vez, no necesariamente deba existir una sola función, podrían existir varios factories, algo que quedaría bastante bien organizado, y sobre todo bien encapsulado.
 Tambien nos permite definir un contexto pasado por parametros para que nos devuelva la instancia ideal.
 
@@ -126,6 +126,7 @@ Siguiendo los lineamientos de no realizar estrategias donde no es necesario, el 
 > Si algo puede ser hacky son los tests, el codigo productivo debe ser legible y facil de mantener
 
 Ventajas:
+
 - Permite encapsular el código de forma correcta, definiendo los servicios que se necesitan en el lugar donde se usan.
 - No expone los detalles internos de implementacion.
 - Permite reducir complejidad de constructores.
@@ -133,7 +134,7 @@ Ventajas:
 - Podemos utilizar el patrón experto de forma más clara y concisa.
 - Escribimos las estrategias de factories en el archivo adecuado.
 
-## Ahora veamos los fundamentos 
+## Ahora veamos los fundamentos
 
 En realidad, hacer inyección de dependencias es una practica simpatica, el problema es la forma en que se hace, se exponen muchas veces estrategias en los libros y los ejemplos son simples, y funcionan para ese ejemplo, pero no escalan, porque terminan repartiendo responsabilidades incorrectamente y exponiendo inadecuadamente los internals de las implementaciones. (GRASP patterns)
 
@@ -146,11 +147,11 @@ Permite establecer diferentes estrategias de resolución de un problema a travé
 
 Lo cierto es que la existencia de Strategy, es lo que le da sentido a la inyección de dependencias por constructores.
 
-No debemos usar DI por constructor cuando no tenemos strategy. O sea, si realmente existe una interfaz y el usuario de nuestra librería tiene la libertad de implementar el comportamiento, esta perfecto. 
+No debemos usar DI por constructor cuando no tenemos strategy. O sea, si realmente existe una interfaz y el usuario de nuestra librería tiene la libertad de implementar el comportamiento, esta perfecto.
 
-Pero si las opciones son limitadas, o bien existe una única opción, es preferible usa Factory Methods. 
+Pero si las opciones son limitadas, o bien existe una única opción, es preferible usa Factory Methods.
 
-Porque digo esto ? Porque es muy común observar las siguientes conductas a la hora de programar : 
+Porque digo esto ? Porque es muy común observar las siguientes conductas a la hora de programar :
 
 - Implementar interfaces si o si, para separar capas
 - Implementar interfaces cuando solo existe una sola implementación
@@ -164,7 +165,7 @@ Porque digo esto ? Porque es muy común observar las siguientes conductas a la h
 - Una clase mock para testear no es excusa para implementar strategy.
 - Si las clases que se estan instanciando se conocen (porque estan en el mismo paquete), no es necesario usar DI.
 - Solo debemos hacer DI por constructor cuando realmente tenemos una estrategia y la define el cliente de nuestra api.
-- Cuando *por las dudas* generalizamos y hacemos DI, estamos escribiendo código extra innecesario.
+- Cuando _por las dudas_ generalizamos y hacemos DI, estamos escribiendo código extra innecesario.
 - Cuando queremos mockear para unit test, es preferible soluciones hacky.
 
 ### Cuales son los problemas de la DI cuando se usa mal:
@@ -198,7 +199,7 @@ Cuando tenemos DI por constructor, no necesariamente podríamos usar un Factory 
 
 [Service locator pattern](https://en.wikipedia.org/wiki/Service_locator_pattern)
 
-[Strategy (patrón de diseño)](https://es.wikipedia.org/wiki/Strategy_(patr%C3%B3n_de_dise%C3%B1o))
+[Strategy (patrón de diseño)](<https://es.wikipedia.org/wiki/Strategy_(patr%C3%B3n_de_dise%C3%B1o)>)
 
 [Patrón de diseño](https://es.wikipedia.org/wiki/Patr%C3%B3n_de_dise%C3%B1o)
 

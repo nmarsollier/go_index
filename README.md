@@ -1,4 +1,4 @@
-[English version](https://github.com/nmarsollier/go_index/blob/main/README_en.md)
+[English version](README_en.md)
 
 # Una guía sobe Go en ambientes de microservicios
 
@@ -18,43 +18,43 @@ Cada entrada es un repositorio que se enfoca en ciertos conceptos en particular,
 
 > De donde sale la inyección de dependencias ? - Porque no sirve en Go? - Estrategias mas simples ?
 
-[Un enfoque mas funcional](https://github.com/nmarsollier/go_functional/blob/main/README.md)
+[Un enfoque mas funcional](go_functional/README.md)
 
 > Go no es Orientado a Objetos - Beneficios de prog. funcional - Estrategias de mock sin interfaces innecesarias
 
-[Repasemos DI e IoC funcional](https://github.com/nmarsollier/go_di_ioc2/blob/main/README.md)
+[Repasemos DI e IoC funcional](go_di_ioc2/README.md)
 
 > En programación funcional, la inyección de dependencias no existe como en OO.
 
-[REST Controllers en Go](https://github.com/nmarsollier/go_rest_controller/blob/main/README.md)
+[REST Controllers en Go](go_rest_controller/README.md)
 
 > El MVC simple y bien explicado - Organizar correctamente nuestros controllers - Organizar el código desde el controller - REST en servicios de negocio
 
-[Router Design Pattern](https://github.com/nmarsollier/go_router_design/blob/main/README.md)
+[Router Design Pattern](go_router_design/README.md)
 
 > Que es el Router Pattern - Porque digo que no lo aprovechamos totalmente - Estrategias
 
-[Un poco mas declarativos](https://github.com/nmarsollier/go_declarative/blob/main/README.md)
+[Un poco mas declarativos](go_declarative/README.md)
 
 > Que es ser declarativo y como le podemos sacar ventaja en simplificar el código
 
-[Builder Pattern en Router](https://github.com/nmarsollier/go_router_builder/blob/main/README.md)
+[Builder Pattern en Router](go_router_builder/README.md)
 
 > Como podemos aprovechar el Router mucho mas usándolo como Builder - Procesamiento en paralelo muy simple
 
-[Definiendo cross libs](https://github.com/nmarsollier/go_libs/blob/main/README.md)
+[Definiendo cross libs](go_libs/README.md)
 
 > Consejos para definir librerías compartidas y algunas buenas practicas para convivir con terceros
 
-[Polimorfismo con Funciones](https://github.com/nmarsollier/go_functional_polimorfism/blob/main/README.md)
+[Polimorfismo con Funciones](go_functional_polimorfism/README.md)
 
 > Evitando interfaces innecesarias - Estrategias para hacer polimorfismo con funciones
 
-[Estructuras de Directorios](https://github.com/nmarsollier/go_directories/blob/main/README.md)
+[Estructuras de Directorios](go_directories/README.md)
 
 > Dividir en capas el código - Como organizar el código inteligentemente para que encontremos cada cosa en su lugar.
 
-[Una forma adecuada de hacer cache](https://github.com/nmarsollier/go_cache/blob/main/README.md)
+[Una forma adecuada de hacer cache](go_cache/README.md)
 
 > Hacer cache no es nada sencillo, se explican problemas comunes y se da una solución de cache para un caso muy puntual, cachear una respuesta remota.
 
