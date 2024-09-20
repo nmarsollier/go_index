@@ -14,7 +14,7 @@ Un buen arquitecto es aquel que diseña arquitecturas sencillas que resuelven el
 
 Cada entrada es un repositorio que se enfoca en ciertos conceptos en particular, pudiendo no respetar otros que no se discuten en esos ejemplos. Recomiendo leerlos en orden, para obtener un contexto adecuado en los capítulos posteriores.
 
-[DI e IoC](https://github.com/nmarsollier/go_di_ioc/blob/main/README.md)
+[DI e IoC](go_di_ioc/README.md)
 
 > De donde sale la inyección de dependencias ? - Porque no sirve en Go? - Estrategias mas simples ?
 
