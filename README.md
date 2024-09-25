@@ -16,7 +16,7 @@ Cada entrada es un repositorio que se enfoca en ciertos conceptos en particular,
 
 [DI e IoC](go_di_ioc/README.md)
 
-> De donde sale la inyección de dependencias ? - Porque no sirve en Go? - Estrategias mas simples ?
+> De donde sale la inyección de dependencias ? - Sirve en Go? - Estrategias mas simples ?
 
 [Un enfoque mas funcional](go_functional/README.md)
 
@@ -57,6 +57,10 @@ Cada entrada es un repositorio que se enfoca en ciertos conceptos en particular,
 [Una forma adecuada de hacer cache](go_cache/README.md)
 
 > Hacer cache no es nada sencillo, se explican problemas comunes y se da una solución de cache para un caso muy puntual, cachear una respuesta remota.
+
+Un contenedor para ineccion de dependencias (En construccion)
+
+> La forma mas simple de hacer inyeccion de dependencias sin conceptos extraños.
 
 ## Que me motiva a escribir estas notas ?
 

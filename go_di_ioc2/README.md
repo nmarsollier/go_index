@@ -30,7 +30,7 @@ Mas adelante en esta guía se explican mas estrategias.
 
 ## Que datos debe recibir una función ?
 
-Solo los que necesita, nunca debemos pasar datos que la función no necesita, o estructuras complejas que luego no se usan, siempre es preferible recibir los parametros justos y cuando son muchos o confusos, definir y pasar por estructuras esos parametros, de forma tal que quede claro que una función necesita eso y solo eso, ni mas, ni menos.
+Solo los que necesita, nunca debemos pasar datos que la función no necesita, o estructuras complejas que luego no se usan, siempre es preferible recibir los parámetros justos y cuando son muchos o confusos, definir y pasar por estructuras esos parámetros, de forma tal que quede claro que una función necesita eso y solo eso, ni mas, ni menos.
 
 Las funciones deben verse como cajas cerradas desde el mundo exterior, son cajas que necesitan cierta información, porque responden a cierta funcionalidad bien clara, y esa data que necesitan es suficiente para que el que usa la función entienda que se necesita y a veces con solo conocer los datos ya sabemos el porque.
 
@@ -38,7 +38,22 @@ Las funciones deben verse como cajas cerradas desde el mundo exterior, son cajas
 
 Un error muy común en servicios http es pasar el contexto y que las funciones extraigan valores del contexto, las funciones deben recibir el contexto solo para cancelar goroutines, por ejemplo, pero nunca para sacar valores del mismo.
 
-El contexto es una bolsa de información que nunca nos deja claro que requisitos debe tener para ser valido, si bien podemos usar el contexto y debemos usar el contexto para poner valores, estos valores quedan restringidas en su uso dentro de los controladores, cuando llamamos a un service extraemos esos valores y se debe llamar con el valor que el service necesita puntualmente.
+El contexto go es una bolsa de información que nunca nos deja claro que requisitos debe tener para ser valido, si bien podemos usar el contexto y debemos usar el contexto para poner valores, estos valores quedan restringidas en su uso dentro de los controladores, cuando llamamos a un service extraemos esos valores y se debe llamar con el valor que el service necesita puntualmente.
+
+## Estrategias similares
+
+Una forma mas profesional de hacer esto: En este proyecto adopte una estrategia que permite pasar un parámetro variable a las funciones que representa un "contexto", pero no un contexto go, sino mas bien un contexto de servicios de negocio que se deben usar, este contexto generalmente esta vacío, salvo que queramos proporcionar diferentes implementaciones a librerías (Ej: Cuando hacemos unit test)
+
+Conceptos clave de este enfoque:
+
+- Las funciones son las que se encargan de crear los servicios necesarios (no les pasamos los servicios a usar por parámetro).
+- Las funciones están desacopladas de la forma en la que se crean los servicios.
+- Los servicios tienen un constructor que recibe el contexto (var arg) y en base al contexto determina la instancia a usar.
+- Las funciones que necesiten usar un servicio usan la función del punto anterior para acceder a esas funciones.
+
+Ahora bien, cada Servicio que puede tener mas de una implementación es el encargado de
+
+[imagego](https://github.com/nmarsollier/imagego).
 
 ## Referencias
 

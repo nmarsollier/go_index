@@ -40,6 +40,21 @@ A very common mistake in HTTP services is to pass the context and have functions
 
 The context is a bag of information that never makes it clear what requirements it must have to be valid, although we can use the context and we must use the context to put values, these values are restricted in their use within the controllers, when we call a service we extract those values and it should be called with the value that the service specifically needs.
 
+## Similar Strategies
+
+A more professional way to do this: In this project, I adopted a strategy that allows passing a variable parameter to functions that represents a "context", but not a Go context, rather a business services context that should be used. This context is generally empty, unless we want to provide different implementations to libraries (e.g., when we do unit testing).
+
+Key concepts of this approach:
+
+- Functions are responsible for creating the necessary services (we do not pass the services to use as a parameter).
+- Functions are decoupled from the way services are created.
+- Services have a constructor that receives the context (var arg) and based on the context determines the instance to use.
+- Functions that need to use a service use the function from the previous point to access those services.
+
+Now, each Service that can have more than one implementation is responsible for
+
+[imagego](https://github.com/nmarsollier/imagego).
+
 ## References
 
 [Pitfalls of context values and how to avoid or mitigate them in Go](https://www.calhoun.io/pitfalls-of-context-values-and-how-to-avoid-or-mitigate-them/)

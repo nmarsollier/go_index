@@ -1,0 +1,17 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "dictionaries": ["es", "en"],
+  "dictionaryDefinitions": [
+    {
+      "name": "es",
+      "path": "cspell-dict-es-es/cspell-ext.json"
+    }
+  ],
+  "overrides": [
+    {
+      "filename": "README.md",
+      "language": "es"
+    }
+  ]
+}

@@ -36,11 +36,15 @@ I recommend to read them in the correct order.
 
 [DI and IoC](go_di_ioc/README_en.md)
 
-> Dependency Injection origins ? - Why it is not useful in Go? - Simpler strategies ?
+> Dependency Injection origins ? - It is useful in Go? - Simpler strategies ?
 
 [A functional way](go_functional/README_en.md)
 
 > Go is not Object Oriented - Benefit or functional style - Mocking strategies without interfaces
+
+[Review of DI and functional programming](go_di_ioc2/README_en.md)
+
+> In Go dependency injection is not like OO
 
 [REST Controllers in Go](go_rest_controller/README_en.md)
 
