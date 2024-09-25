@@ -40,9 +40,14 @@ Un error muy común en servicios http es pasar el contexto y que las funciones e
 
 El contexto go es una bolsa de información que nunca nos deja claro que requisitos debe tener para ser valido, si bien podemos usar el contexto y debemos usar el contexto para poner valores, estos valores quedan restringidas en su uso dentro de los controladores, cuando llamamos a un service extraemos esos valores y se debe llamar con el valor que el service necesita puntualmente.
 
-## Estrategias similares
+## Ejemplo
 
-Una forma mas profesional de hacer esto: En este proyecto adopte una estrategia que permite pasar un parámetro variable a las funciones que representa un "contexto", pero no un contexto go, sino mas bien un contexto de servicios de negocio que se deben usar, este contexto generalmente esta vacío, salvo que queramos proporcionar diferentes implementaciones a librerías (Ej: Cuando hacemos unit test)
+En este proyecto adopte una estrategia que permite pasar un parámetro variable a las funciones que representa un "contexto", pero no un contexto go, sino mas bien un contexto funcional de servicios de negocio que se deben usar, este contexto generalmente esta vacío, salvo que queramos proporcionar diferentes implementaciones a librerías (Ej: Cuando hacemos unit test, o bien cuando queremos pasar alguna instancia particular para diferentes casos de uso)
+
+Ejemplos puntuales:
+
+- Manejo de la conexión a la base de datos: Podemos mockear una conexión o bien el mismo constructor db.Get instancia la base de datos real.
+- El manejo de logs, los logs dependen de un contexto particular, ya sea un request gin o un proceso de mensajes Rabbit. En particular el correlation_id tiene diferentes valores según sea necesario y las funciones que deban realizar logs deben tener ese contexto particular mientras duren las operaciones relacionadas.
 
 Conceptos clave de este enfoque:
 

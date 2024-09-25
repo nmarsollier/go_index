@@ -174,15 +174,21 @@ Having in mind, that dependency injection by Factory Method is a good practice, 
 - We couple code. For example a main.go method does not need to know that a service needs a dao.
 - We do code hard to read, then hard to maintain.
 
-### So when it's ok to do DI by constructor ?
+### When we SHOULD use Constructor DI
 
-- When we have an strategy (polymorphism) and the client can define the behavior. (Ex: A callback routine).
-- When we are coding a module, and the implementation is done outside.
-- When we are working in a library, and we want to be friendly with the users.
+- When we have a strategy, i.e., polymorphism to solve a problem and the client defines it (for example, a callback to subroutines).
+- When we are programming a module and the implementation of the behavior is defined outside the module.
+- When we are programming a library and want to be user-friendly for third parties who might need some kind of hacky implementation.
+- When we need to use dependencies of a service provided by another module.
+- When we access data outside our module, such as APIs or databases.
 
-### Creational alternatives
+### Creational Alternatives
 
-When we have DI, not necessarily we need use a Factory Method, there are many crational patterns, the important thing is to asociate that creation in the service module definition.
+When we have Constructor DI, we might not necessarily use a Factory Method. There are several creational patterns that could also be useful, such as Builders, Object Pool, etc. The important thing is that this creation is associated with the object being created, and not just anywhere, and in turn, instantiated in the component that needs it.
+
+### Functional Alternative
+
+We are learning Go because we want to be pragmatic. The best way to program in Go is by using functional fundamentals, in which dependency injection takes a different direction.
 
 ## Resources
 

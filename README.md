@@ -58,10 +58,6 @@ Cada entrada es un repositorio que se enfoca en ciertos conceptos en particular,
 
 > Hacer cache no es nada sencillo, se explican problemas comunes y se da una solución de cache para un caso muy puntual, cachear una respuesta remota.
 
-Un contenedor para ineccion de dependencias (En construccion)
-
-> La forma mas simple de hacer inyeccion de dependencias sin conceptos extraños.
-
 ## Que me motiva a escribir estas notas ?
 
 Go es un lenguaje muy particular, es y no es muchas cosas, tiene una comunidad muy compleja de entender.

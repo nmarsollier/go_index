@@ -40,9 +40,14 @@ A very common mistake in HTTP services is to pass the context and have functions
 
 The context is a bag of information that never makes it clear what requirements it must have to be valid, although we can use the context and we must use the context to put values, these values are restricted in their use within the controllers, when we call a service we extract those values and it should be called with the value that the service specifically needs.
 
-## Similar Strategies
+## Example
 
-A more professional way to do this: In this project, I adopted a strategy that allows passing a variable parameter to functions that represents a "context", but not a Go context, rather a business services context that should be used. This context is generally empty, unless we want to provide different implementations to libraries (e.g., when we do unit testing).
+In this project, I adopted a strategy that allows passing a variable parameter to functions that represents a "context", but not a Go context, rather a functional context of business services that should be used. This context is generally empty, unless we want to provide different implementations to libraries (e.g., when we do unit testing, or when we want to pass a particular instance for different use cases).
+
+Specific examples:
+
+- Database connection management: We can mock a connection or the db.Get constructor itself instantiates the real database.
+- Log management: Logs depend on a particular context, whether it is a gin request or a Rabbit message process. Specifically, the correlation_id has different values as needed, and functions that need to perform logs must have that particular context while related operations last.
 
 Key concepts of this approach:
 

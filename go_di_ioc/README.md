@@ -4,9 +4,11 @@
 
 Este repositorio plantea alternativas de manejo de dependencias, a la programación tradicional de un proyecto Go.
 
+Mas adelante se encuentra un ejemplo de como manejar un service locator de forma adecuada, cuando tiene sentido.
+
 ## Mal uso de Inyección de Dependencias
 
-Es esa estrategia de IoC que nos permite proveer dependencias en una estructura de datos para que sean usadas internamente.
+En ese uso tradicional de IoC que nos permite proveer dependencias en una estructura de datos para que sean usadas internamente.
 
 En la carpeta [ejemplo_tradicional](./ejemplo_tradicional/) tenemos los ejemplos de código.
 
@@ -45,15 +47,15 @@ func (s HelloService) SayHello() string {
 }
 ```
 
-Y esa es una buena practica, pero cuando las dependencias son realmente implementaciones que se ajusten a casos donde si se debe usar inyección de dependencias (ejemplo: Strategy pattern), aclarando que esta estrategia no está mal, el problema es cuando abusamos de ella en casos donde no es correcto usarse, en nuestros sistemas, la gran mayoria de dependencias no necesitan usar DI.
+Y esa es una buena practica, pero cuando las dependencias son realmente implementaciones que se ajusten a casos donde si se debe usar inyección de dependencias (ejemplo: Strategy pattern), aclarando que esta estrategia no está mal, el problema es cuando abusamos de ella en casos donde no es correcto usarse, en nuestros sistemas, la gran mayoría de dependencias no necesitan usar DI.
 
-Un uso como el anterior no desacopla realmente, todo lo contrario, terminamos acoplando mucho mas, nuestro código debe definir métodos bootstraps en lugares donde no deberían estar, acoplando todo el negocio en un archivo main.go por ejemplo.
+Un uso como el anterior no desacopla realmente, todo lo contrario, terminamos acoplando mucho mas, nuestro código debe definir métodos bootstrap en lugares donde no deberían estar, acoplando todo el negocio en un archivo main.go por ejemplo.
 
-Ademas de acoplar, exponemos los detalles internos de nuestras implementaciones, algo que deberia estar encapsulado.
+Ademas de acoplar, exponemos los detalles internos de nuestras implementaciones, algo que debería estar encapsulado.
 
-Podemos revisar las raices de programacion orientada a objetos y darnos cuenta que incluso iría en contra del principio de [Information Expert](<https://en.wikipedia.org/wiki/GRASP_(object-oriented_design)#Information_expert>), que nos dice que las dependencias deben ser instanciadas en el lugar donde se tiene la informacion, de modo tal que por ejemplo crear las dependencias de un servicio en la capa de controladores, genera acoplamiento y nuestro código ya no seria cohesivo.
+Podemos revisar las raíces de programación orientada a objetos y darnos cuenta que incluso iría en contra del principio de [Information Expert](<https://en.wikipedia.org/wiki/GRASP_(object-oriented_design)#Information_expert>), que nos dice que las dependencias deben ser creadas en el lugar donde se tiene la información, de modo tal que por ejemplo crear las dependencias de un servicio en la capa de controladores, genera acoplamiento y nuestro código ya no seria cohesivo.
 
-La realidad, es que se usa porque nos da la posibilidad de mockear esas dependencias para realizar buenos testings. Sin embargo existen muchas alternativas que podemos usar sin llegar a usar DI.
+La realidad, es que se usa porque nos da la posibilidad de mockear esas dependencias para realizar buenos testing. Sin embargo existen muchas alternativas que podemos usar sin llegar a usar DI.
 
 ## Uso de Factory Methods como IoC
 
@@ -65,9 +67,9 @@ Un service locator, es básicamente un framework que conoce nuestras dependencia
 
 Si partimos los patrones generales de asignación de responsabilidades GRASP, una de las formas clásicas y adecuadas de construir objetos es el uso de Factory Methods.
 
-Pensemos en ese factory method, como parte de un framework de inyección de dependencias, que dependiendo del contexto (parametros en el factory u ortro metodo) nos va a retornar la instancia correcta del servicio que necesitemos. Lo que tiene de adecuado este patrón, es que la estrategia de creación, se escribe junto a los servicios, por lo que queda mucho mas claro el funcionamiento del mismo.
+Pensemos en ese factory method, como parte de un framework de inyección de dependencias, que dependiendo del contexto (parámetros en el factory u otro método) nos va a retornar la instancia correcta del servicio que necesitemos. Lo que tiene de adecuado este patrón, es que la estrategia de creación, se escribe junto a los servicios, por lo que queda mucho mas claro el funcionamiento del mismo.
 
-Esta estrategia nos permite evitar inyectar las dependencias en los constructores y delegar la instanciación a funciones factory que estan en el lugar adecuado.
+Esta estrategia nos permite evitar inyectar las dependencias en los constructores y delegar la creación a funciones factory que están en el lugar adecuado.
 
 Este ejemplo lo encontramos en [ioc_factory](./ioc_factory/)
 
@@ -103,9 +105,9 @@ func NewDao() *HelloDao {
 
 Si existe una estrategia de construcción, digamos, singleton, pool de objetos, instancias individuales, o la que sea, esa función se hará cargo.
 A su vez, no necesariamente deba existir una sola función, podrían existir varios factories, algo que quedaría bastante bien organizado, y sobre todo bien encapsulado.
-Tambien nos permite definir un contexto pasado por parametros para que nos devuelva la instancia ideal.
+También nos permite definir un contexto pasado por parámetros para que nos devuelva la instancia ideal.
 
-> Si bien podriamos pensar que esta estrategia es un antipatron (Dependency Freak), no lo es, porque la realidad es que HelloDao no es algo externo a nuestra aplicacion, y no deberia usarse inyeccion de dependencias para instanciarlo. En el articulo (Introduction to Dependecy Injection)[https://kariera.future-processing.pl/blog/introduction-to-dependency-injection/], podemos notar aclaraciones puntuales sobre cuando debemos y cuando no debemos usar inyección de dependencias.
+> Si bien podríamos pensar que esta estrategia es un antipatrón (Dependency Freak), no lo es, porque la realidad es que HelloDao es interno a nuestro módulo, y no debería necesitar inyección de dependencias para crearlo. En el articulo (Introduction to Dependecy Injection)[https://kariera.future-processing.pl/blog/introduction-to-dependency-injection/], podemos notar aclaraciones puntuales sobre cuando debemos y cuando no debemos usar inyección de dependencias.
 
 Para realizar mocks en los tests solo tenemos que definir un valor para mockedDao
 
@@ -123,12 +125,12 @@ func TestSayHelo(t *testing.T) {
 
 Siguiendo los lineamientos de no realizar estrategias donde no es necesario, el dao, no expone interfaces, es solo una estructura, se mockea fácilmente sin necesidad de mayores artefactos.
 
-> Si algo puede ser hacky son los tests, el codigo productivo debe ser legible y facil de mantener
+> Si algo puede ser hacky son los tests, el código productivo debe ser legible y fácil de mantener
 
 Ventajas:
 
 - Permite encapsular el código de forma correcta, definiendo los servicios que se necesitan en el lugar donde se usan.
-- No expone los detalles internos de implementacion.
+- No expone los detalles internos de implementación.
 - Permite reducir complejidad de constructores.
 - Nos evita tener que tener todos los constructores acoplados en un bootstrap.
 - Podemos utilizar el patrón experto de forma más clara y concisa.
@@ -136,7 +138,7 @@ Ventajas:
 
 ## Ahora veamos los fundamentos
 
-En realidad, hacer inyección de dependencias es una practica simpatica, el problema es la forma en que se hace, se exponen muchas veces estrategias en los libros y los ejemplos son simples, y funcionan para ese ejemplo, pero no escalan, porque terminan repartiendo responsabilidades incorrectamente y exponiendo inadecuadamente los internals de las implementaciones. (GRASP patterns)
+En realidad, hacer inyección de dependencias es una practica simpática, el problema es la forma en que se hace, se exponen muchas veces estrategias en los libros y los ejemplos son simples, y funcionan para ese ejemplo, pero no escalan, porque terminan repartiendo responsabilidades incorrectamente y exponiendo inadecuadamente los internals de las implementaciones. (GRASP patterns)
 
 ### El patrón Strategy
 
@@ -163,7 +165,7 @@ Porque digo esto ? Porque es muy común observar las siguientes conductas a la h
 - No debemos usar strategy cuando no hay polimorfismo.
 - Tampoco cuando las opciones de comportamiento son limitadas, una variable de contexto adecuada en el factory es suficiente para tomar esta decision.
 - Una clase mock para testear no es excusa para implementar strategy.
-- Si las clases que se estan instanciando se conocen (porque estan en el mismo paquete), no es necesario usar DI.
+- Si las clases que se están creando se conocen (porque están en el mismo paquete), no es necesario usar DI.
 - Solo debemos hacer DI por constructor cuando realmente tenemos una estrategia y la define el cliente de nuestra api.
 - Cuando _por las dudas_ generalizamos y hacemos DI, estamos escribiendo código extra innecesario.
 - Cuando queremos mockear para unit test, es preferible soluciones hacky.
@@ -184,10 +186,17 @@ Aclarando que la inyección de dependencias por Factory Method es una buena prac
 - Cuando estamos programando un modulo y la implementación del comportamiento se define fuera del modulo.
 - Cuando programamos una librería y queremos ser user friendly para terceros que podrían necesitar algún tipo de implementación hacky.
 - Cuando debemos usar dependencias de un servicio que es provisto por otro modulo.
+- Cuando accedemos a datos fuera de nuestro modulo, como apis o bases de datos.
 
 ### Alternativas creacionales
 
 Cuando tenemos DI por constructor, no necesariamente podríamos usar un Factory Method, existen varios patrones creacionales que podrían ser útiles también, como Builders, Object Pool, etc, lo importante es que esta creación, este asociada al objeto que se crea, y no en cualquier lado y a su vez, instanciada en el componente que la necesita.
+
+### Alternativa funcional
+
+Estamos aprendiendo Go porque queremos ser pragmáticos, la mejor forma de programar go es usando fundamentos funcionales, en los cuales la inyección de dependencias toma un rumbo diferente.
+
+Mas adelante en este tutorial hay mas ejemplos.
 
 ## Fuentes
 
