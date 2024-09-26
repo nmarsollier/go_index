@@ -1,4 +1,4 @@
-[English version](https://github.com/nmarsollier/go_libs/blob/main/README_en.md)
+[English version](README_en.md)
 
 # Las librerías compartidas
 
@@ -139,12 +139,6 @@ func FetchProfile(id string) Profile {
 > The empty interface says nothing
 
 Limitamos el uso de interface{} al mínimo posible, solo lo usamos cuando no podemos mapear los resultados de una librería de terceros, o bien en alguna implementación muy puntual como mapas para cache.
-
-## Referencias
-
-[Exploring structs and interfaces in Go](https://blog.logrocket.com/exploring-structs-and-interfaces-in-go/)
-
-[Interfaces and other types](https://golang.org/doc/effective_go#interfaces_and_types)
 
 ## Nota
 

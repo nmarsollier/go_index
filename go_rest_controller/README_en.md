@@ -128,16 +128,6 @@ POST http://go_rest_controller.com/order/:id/paid
 
 POST http://go_rest_controller.com/order/:id/cancel
 
-## Resources
-
-[Introducing the RMR Web Architecture](https://www.peej.co.uk/articles/rmr-architecture.html)
-
-[Chapter 4. The Resource-Oriented Architecture](https://www.oreilly.com/library/view/restful-web-services/9780596529260/ch04.html)
-
-[Modelo-vista-controlador](https://es.wikipedia.org/wiki/Modelo%E2%80%93vista%E2%80%93controlador)
-
-[REST Resource Naming Guide](https://restfulapi.net/resource-naming/)
-
 ## Note
 
 This is a series of notes about advanced Go patterns, with a really simple implementation.

@@ -150,28 +150,6 @@ Another important thing is the continuous regactoring that POO requires, it is h
 
 Functional paradigm is simple, refactoring functions is simple, testing is also straight forward, layer separation can be easily done, and having in mind single function responsibilities, everything becomes much more easy to understand.
 
-## Sources
-
-[Effective Go](https://golang.org/doc/effective_go#interfaces_and_types)
-
-[Programación funcional](https://es.wikipedia.org/wiki/Programaci%C3%B3n_funcional)
-
-[Functional programming](https://en.wikipedia.org/wiki/Functional_programming)
-
-[SOLID](https://es.wikipedia.org/wiki/SOLID)
-
-[Functional Programming For The Rest of Us](http://www.defmacro.org/2006/06/19/fp.html)
-
-[YAGNI](https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it)
-
-[KISS](https://en.wikipedia.org/wiki/KISS_principle)
-
-[InterfaceImplementationPair](https://martinfowler.com/bliki/InterfaceImplementationPair.html)
-
-[Foo/FooImpl pairs - stop doing it!](http://wrschneider.github.io/2015/07/27/foo-fooimpl-pairs.html)
-
-[When to Mock](https://blog.cleancoder.com/uncle-bob/2014/05/10/WhenToMock.html)
-
 ## Note
 
 This is a series of notes about advanced Go patterns, with a really simple implementation.

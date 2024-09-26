@@ -154,28 +154,6 @@ Por otro lado un enfoque funcional es mucho mas simple, el refactor es simple, l
 
 En las empresas en general mas de la mitad de los desarrolladores tendrán poca experiencia, muchos de ellos estarán dando sus primeros pasos, por lo que ésta simplicidad es bienvenida.
 
-## Fuentes
-
-[Effective Go](https://golang.org/doc/effective_go#interfaces_and_types)
-
-[Programación funcional](https://es.wikipedia.org/wiki/Programaci%C3%B3n_funcional)
-
-[Functional programming](https://en.wikipedia.org/wiki/Functional_programming)
-
-[SOLID](https://es.wikipedia.org/wiki/SOLID)
-
-[Functional Programming For The Rest of Us](http://www.defmacro.org/2006/06/19/fp.html)
-
-[YAGNI](https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it)
-
-[KISS](https://en.wikipedia.org/wiki/KISS_principle)
-
-[InterfaceImplementationPair](https://martinfowler.com/bliki/InterfaceImplementationPair.html)
-
-[Foo/FooImpl pairs - stop doing it!](http://wrschneider.github.io/2015/07/27/foo-fooimpl-pairs.html)
-
-[When to Mock](https://blog.cleancoder.com/uncle-bob/2014/05/10/WhenToMock.html)
-
 ## Nota
 
 Esta es una serie de notas sobre patrones simples de programación en GO.

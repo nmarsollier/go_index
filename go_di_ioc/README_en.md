@@ -190,28 +190,6 @@ When we have Constructor DI, we might not necessarily use a Factory Method. Ther
 
 We are learning Go because we want to be pragmatic. The best way to program in Go is by using functional fundamentals, in which dependency injection takes a different direction.
 
-## Resources
-
-[Dependency injection](https://en.wikipedia.org/wiki/Dependency_injection)
-
-[GRASP](https://es.wikipedia.org/wiki/GRASP)
-
-[Service locator pattern](https://en.wikipedia.org/wiki/Service_locator_pattern)
-
-[Strategy (patrón de diseño)](<https://es.wikipedia.org/wiki/Strategy_(patr%C3%B3n_de_dise%C3%B1o)>)
-
-[Patrón de diseño](https://es.wikipedia.org/wiki/Patr%C3%B3n_de_dise%C3%B1o)
-
-[YAGNI](https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it)
-
-[KISS](https://en.wikipedia.org/wiki/KISS_principle)
-
-[InterfaceImplementationPair](https://martinfowler.com/bliki/InterfaceImplementationPair.html)
-
-[Foo/FooImpl pairs - stop doing it!](http://wrschneider.github.io/2015/07/27/foo-fooimpl-pairs.html)
-
-[When to Mock](https://blog.cleancoder.com/uncle-bob/2014/05/10/WhenToMock.html)
-
 ## Note
 
 This is a series of notes about advanced Go patterns, with a really simple implementation.

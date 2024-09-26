@@ -197,14 +197,6 @@ Cuando algún controller quiera obtener este dato, llamara a CurrentUserProfile,
 
 De esta forma controlamos, encapsulamos y desacoplamos la estrategia de cache en contextos.
 
-## Fuentes
-
-[Routing Design Patterns](https://medium.com/@goldhand/routing-design-patterns-fed766ad35fa)
-
-[Cadena de responsabilidad](https://es.wikipedia.org/wiki/Cadena_de_responsabilidad)
-
-[Guard Clause](https://deviq.com/design-patterns/guard-clause)
-
 ## Nota
 
 Esta es una serie de notas sobre patrones simples de programación en GO.

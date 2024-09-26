@@ -60,11 +60,80 @@ Now, each Service that can have more than one implementation is responsible for
 
 [imagego](https://github.com/nmarsollier/imagego).
 
-## References
+**Dependency Construction**
 
-[Pitfalls of context values and how to avoid or mitigate them in Go](https://www.calhoun.io/pitfalls-of-context-values-and-how-to-avoid-or-mitigate-them/)
+The context is defined as a variable parameter, which is received as a parameter when calling the constructors. Each component that we need to "inject" as a functional dependency must have a constructor that receives the functional context. If the context already provides a dependency, that dependency is used; otherwise, the constructor returns the appropriate one.
 
-[Twelve Go Best Practices](https://talks.golang.org/2013/bestpractices.slide#1)
+This is a very elegant way to decouple instances and delegate the creation of instances correctly to the components that know how to create them.
+
+```go
+func Get(ctx ...interface{}) RedisClient {
+  // If the context provides an instance, we use that instance; otherwise, we return the production instance
+  for _, o := range ctx {
+    if client, ok := o.(RedisClient); ok {
+      return client
+    }
+  }
+
+  once.Do(func() {
+    instance = redis.NewClient(&redis.Options{
+      Addr:     env.Get().RedisURL,
+      Password: "",
+      DB:       0,
+    })
+  })
+  return instance
+}
+```
+
+**Initialization**
+
+The context is initialized when operations start in a controller and is passed to all necessary functions.
+
+In this case, the function is defined in the context of a gin server as:
+
+```go
+// Gets the context for external services
+func GinCtx(c *gin.Context) []interface{} {
+  var ctx []interface{}
+  ctx = append(ctx, ginLogger(c))
+  return ctx
+}
+```
+
+In this specific case, the context is initialized with a logger that is used to track the correlation_id. This logger instance analyzes the request for a header that requires correlation_id traceability. If it finds one, it uses it; otherwise, it creates a new logger with a new correlation_id.
+
+All subsequent calls will already have a logger instance to use.
+
+```go
+func initPostImage() {
+  server.Router().POST(
+    "/v1/image",
+    server.ValidateAuthentication,
+    saveImage,
+  )
+}
+
+func saveImage(c *gin.Context) {
+  bodyImage, err := getBodyImage(c)
+  if err != nil {
+    c.Error(err)
+    return
+  }
+
+  // We get the context and then pass it to the functions that need it
+  ctx := server.GinCtx(c)
+  id, err := image.Insert(image.New(bodyImage), ctx...)
+  if err != nil {
+    c.Error(err)
+    return
+  }
+
+  c.JSON(200, NewImageResponse{ID: id})
+}
+```
+
+As we can see, image.Insert does not need to know which logger is used or which Redis instance is used; it is simply provided with a context. In the case of the logger, it initializes gin, but in the case of Redis, the Redis factory itself initializes it on demand.
 
 ## Note
 

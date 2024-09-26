@@ -60,11 +60,125 @@ Ahora bien, cada Servicio que puede tener mas de una implementación es el encar
 
 [imagego](https://github.com/nmarsollier/imagego).
 
-## Referencias
+**Construcción de dependencias**
 
-[Pitfalls of context values and how to avoid or mitigate them in Go](https://www.calhoun.io/pitfalls-of-context-values-and-how-to-avoid-or-mitigate-them/)
+El contexto se define como un parámetro variable, que cuando llamamos a los constructores se recibe como parámetro, cada componente que necesitemos "inyectar" como dependencia funcional, debe tener un constructor que recibe el contexto funcional, si el contexto ya provee una dependencia se usa esa dependencia, caso contrario el constructor retorna la adecuada.
 
-[Twelve Go Best Practices](https://talks.golang.org/2013/bestpractices.slide#1)
+Esta es una forma muy elegante de desacoplar las instancias y delegar la creación de las instancias correctamente a los componentes que conocen como crearlos.
+
+```go
+func Get(ctx ...interface{}) RedisClient {
+  // Si el contexto proporciona una instancia usamos esa instancia sino retornamos la instancia de producción
+	for _, o := range ctx {
+		if client, ok := o.(RedisClient); ok {
+			return client
+		}
+	}
+
+	once.Do(func() {
+		instance = redis.NewClient(&redis.Options{
+			Addr:     env.Get().RedisURL,
+			Password: "",
+			DB:       0,
+		})
+	})
+	return instance
+}
+
+```
+
+**Inicialización**
+
+El contexto se inicializa cuando comienzan las operaciones en un controller adecuadamente y se pasa a todas las funciones que sea necesario.
+
+En este caso la función se define en el contexto de un servidor gin como :
+
+```go
+
+// Gets the context for external services
+func GinCtx(c *gin.Context) []interface{} {
+	var ctx []interface{}
+	ctx = append(ctx, ginLogger(c))
+	return ctx
+}
+```
+
+En este caso puntual el contexto se inicializa con un logger que es usado para hacer un seguimiento del correlation_id. Esta instancia de logger analiza el request en busca de un header que requiera una trazabilidad de correlation_id si lo encuentra usa ese sino crea un logger nuevo con un correlation_id nuevo.
+
+Todas la llamadas siguientes ya tendrán una instancia de logger a usar.
+
+```go
+func initPostImage() {
+	server.Router().POST(
+		"/v1/image",
+		server.ValidateAuthentication,
+		saveImage,
+	)
+}
+
+func saveImage(c *gin.Context) {
+	bodyImage, err := getBodyImage(c)
+	if err != nil {
+		c.Error(err)
+		return
+	}
+
+  // Obtenemos el contexto y luego se lo pasamos a las funciones que lo necesiten
+	ctx := server.GinCtx(c)
+	id, err := image.Insert(image.New(bodyImage), ctx...)
+	if err != nil {
+		c.Error(err)
+		return
+	}
+
+	c.JSON(200, NewImageResponse{ID: id})
+}
+```
+
+Como podemos ver, de forma correcta image.Insert no necesita saber que logger se usa ni que instancia de Redis se usa, simplemente se le provee un contexto, en el caso del logger inicializa gin, pero en el caso de Redis es el mismo factory de redis el que lo inicializa a demanda.
+
+### Test
+
+Con una pequeña modificación a GinCtx, podriamos mockear en GinCtx un contexto completo para tests
+
+```go
+
+// Gets the context for external services
+func GinCtx(c *gin.Context) []interface{} {
+	var ctx []interface{}
+	// mock_ctx solo es para mocks en testing
+	if mocks, ok := c.Get("mock_ctx"); ok {
+		return mocks.([]interface{})
+	}
+
+	ctx = append(ctx, ginLogger(c))
+
+	return ctx
+}
+```
+
+Luego simplemente antes de llamar al test, debemos poner en el contexto gin los mocks necesarios.
+
+```go
+  // Inicialización previas de Gin
+
+	// Mocks Redis
+	ctrl := gomock.NewController(t)
+	redisMock := redisx.NewMockRedisClient(ctrl)
+	redisMock.EXPECT().Get(gomock.Any()).Return(redis.NewStringResult("", errs.NotFound)).Times(1)
+
+  mock_ctx := []interface{}{
+    redisMock,
+    log.NewTestLogger()
+  }
+
+  engine.Use(func(c *gin.Context) {
+    c.Set("mock_ctx", mock_ctx)
+    c.Next()
+  })
+
+  // Llamamos al request que corresponda en gin.
+```
 
 ## Nota
 

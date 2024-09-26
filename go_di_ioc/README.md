@@ -198,32 +198,6 @@ Estamos aprendiendo Go porque queremos ser pragmáticos, la mejor forma de progr
 
 Mas adelante en este tutorial hay mas ejemplos.
 
-## Fuentes
-
-[Dependency injection](https://en.wikipedia.org/wiki/Dependency_injection)
-
-[Introduction to Dependency Injection](https://kariera.future-processing.pl/blog/introduction-to-dependency-injection/)
-
-[GRASP](https://es.wikipedia.org/wiki/GRASP)
-
-[Service locator pattern](https://en.wikipedia.org/wiki/Service_locator_pattern)
-
-[Strategy (patrón de diseño)](<https://es.wikipedia.org/wiki/Strategy_(patr%C3%B3n_de_dise%C3%B1o)>)
-
-[Patrón de diseño](https://es.wikipedia.org/wiki/Patr%C3%B3n_de_dise%C3%B1o)
-
-[YAGNI](https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it)
-
-[KISS](https://en.wikipedia.org/wiki/KISS_principle)
-
-[InterfaceImplementationPair](https://martinfowler.com/bliki/InterfaceImplementationPair.html)
-
-[Foo/FooImpl pairs - stop doing it!](http://wrschneider.github.io/2015/07/27/foo-fooimpl-pairs.html)
-
-[When to Mock](https://blog.cleancoder.com/uncle-bob/2014/05/10/WhenToMock.html)
-
-[A theory of modern Golang](https://news.ycombinator.com/item?id=14521894)
-
 ## Nota
 
 Esta es una serie de tutoriales sobre patrones simples de programación en GO.

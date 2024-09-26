@@ -190,14 +190,6 @@ In the previous same, the same middleware that preload the data LoadCurrentUser,
 
 When we need to get the current user we call CurrentUserProfile.
 
-## Source
-
-[Routing Design Patterns](https://medium.com/@goldhand/routing-design-patterns-fed766ad35fa)
-
-[Cadena de responsabilidad](https://es.wikipedia.org/wiki/Cadena_de_responsabilidad)
-
-[Guard Clause](https://deviq.com/design-patterns/guard-clause)
-
 ## Note
 
 This is a series of notes about advanced Go patterns, with a really simple implementation.
