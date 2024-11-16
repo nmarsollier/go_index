@@ -1,3 +1,5 @@
+<!-- cSpell:language es -->
+
 [English version](README_en.md)
 
 # Luego de funcional, volvemos a hablar de inyección de dependencias

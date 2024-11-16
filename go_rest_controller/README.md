@@ -1,3 +1,5 @@
+<!-- cSpell:language es -->
+
 [English Version](README_en.md)
 
 # REST Controllers en go

@@ -1,3 +1,5 @@
+<!-- cSpell:language es -->
+
 [English version](README_en.md)
 
 # Una guía sobe Go en ambientes de microservicios

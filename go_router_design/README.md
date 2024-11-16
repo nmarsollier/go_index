@@ -1,3 +1,5 @@
+<!-- cSpell:language es -->
+
 [English version](README_en.md)
 
 # Router Design Pattern

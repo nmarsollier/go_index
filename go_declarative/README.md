@@ -1,3 +1,5 @@
+<!-- cSpell:language es -->
+
 [English Version](README_en.md)
 
 # Un poco mas declarativos

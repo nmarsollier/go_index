@@ -1,3 +1,5 @@
+<!-- cSpell:language es -->
+
 [English Version](README_en.md)
 
 # Un enfoque mas funcional de Go
