@@ -27,7 +27,7 @@ Pero el concepto de Route pattern va mas allá, para comprenderlo, necesitamos c
 - Es un concepto viejo de programación funcional
 - Permite reutilizar código
 - Separa mejor las responsabilidades en funciones simples
-- Permite hacer las responsabilidades de controller de forma muy simplificada
+- Permite hacer las responsabilidades de controlador de forma muy simplificada
 - Permite armar una respuesta compleja en forma ordenada y por etapas
 
 ![Chain of Responsibility](./img/cor.png)
@@ -56,7 +56,7 @@ Es muy util para realizar operaciones como :
 - Prevenir Hacks
 - Manejo de contextos de transacciones
 - Precarga de recursos relacionados al request
-- Loggers de estadisticas
+- Loggers de estadísticas
 
 Y muchas otras cosas mas.
 
@@ -195,7 +195,7 @@ func CurrentUserProfile(c *gin.Context) *users.Profile {
 
 En el ejemplo anterior, el middleware es LoadCurrentUser, donde se buscara de acuerdo al token el perfil de usuario correspondiente.
 
-Cuando algún controller quiera obtener este dato, llamara a CurrentUserProfile, que nos retornara el dato en el contexto.
+Cuando algún controlador quiera obtener este dato, llamara a CurrentUserProfile, que nos retornara el dato en el contexto.
 
 De esta forma controlamos, encapsulamos y desacoplamos la estrategia de cache en contextos.
 

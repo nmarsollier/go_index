@@ -6,14 +6,12 @@
 
 Este repositorio plantea una forma simple y efectiva de organizar nuestros servicios REST en un entorno de microservicios.
 
-## RMR - Resource-Method-Representation
+## El controlador
 
-RMR es una variante de MVC.
-
-Con RMR nuestros controllers se organizan en orden a las solicitudes Http
-Cada archivo contiene una sola definición de una entrada a un controller
-Estructuramos los directorios del controller en base a eso
-Los nombres del archivo hacen referencia a la entrada http
+- Nuestros controllers se organizan en orden a las solicitudes Http
+- Cada archivo contiene una sola definición de una entrada a un controlador
+- Estructuramos los directorios del controladores en base a eso
+- Los nombres del archivo hacen referencia a la entrada http
 
 Por consiguiente tenemos la estructura :
 
@@ -44,7 +42,7 @@ func getRouter() *gin.Engine {
 
 Tenemos un archivo por método Rest (get_resource, put_resource, get_resources_id, etc) Cada uno maneja una sola función Rest.
 
-En estos archivos definimos todo lo que tenga que ver con esa ruta desde la definición de la misma hasta la implementación del controller.
+En estos archivos definimos todo lo que tenga que ver con esa ruta desde la definición de la misma hasta la implementación del controlador.
 
 ```go
 // Internal configure ping/pong service
@@ -66,13 +64,14 @@ Este mismo concepto se puede adaptar y utilizar con cualquier protocolo como GRP
 ### Ventajas
 
 - Simplifica el código desde su estructura, separa conceptos claramente
-- Orienta nuestras apps y negocio específicamente a hacer algo puntual (una responsabilidad), desde el controller
+- Logramos responsabilidades únicas por archivo
+- Orienta nuestras apps y negocio específicamente a hacer algo puntual (una responsabilidad), desde el controlador
 - Orienta el código a responsabilidades simples
-- Simplifica la lectura y búsqueda del controller
+- Simplifica la lectura y búsqueda del controlador
 - Simplifica el testing
-- Encapsula correctamente cada controller
-- Desacopla las inicializacion de rutas, haciendo la definición de la misma algo sustentable y mantenible
-- Permite una lectura clara de los middlewares de cada controller
+- Encapsula correctamente cada controlador
+- Desacopla las inicialización de rutas, haciendo la definición de la misma algo sustentable y mantenible
+- Permite una lectura clara de los middlewares de cada controlador
 
 ## Fundamentos
 
@@ -82,13 +81,13 @@ Porque microservicios es algo diferente a un monolito ?
 
 - Un microservicio en general maneja un solo aspecto puntual de todo el modelo de negocio
 - Posee una interfaz mucho mas simple
-- En general, la arquitectura de microservicios define como se deben comunicar los microservicios, y muchas veces se une el concepto de View y Controller, ya que nos enfocamos muy pocos protocolos de E/S.
+- En general, la arquitectura de microservicios define como se deben comunicar los microservicios, y muchas veces se une el concepto de Vista y Controlador, ya que nos enfocamos muy pocos protocolos de E/S.
 - Si existen diferentes View, en general se manejan con diferentes microservicios Api Gateways.
 - No hay tanta segregación a implementar.
 
-### El Controller
+### El Controlador
 
-El en enfoque clásico MVC, el Controller y View poseen las siguientes funciones:
+El en enfoque clásico MVC, el controlador y View poseen las siguientes funciones:
 
 - Interpreta un Request
 - Valida los datos de entrada

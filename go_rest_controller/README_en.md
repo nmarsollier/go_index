@@ -4,13 +4,12 @@
 
 This notes are about a single and effective way to organize the rest services in a microservices environment.
 
-## RMR - Resource-Method-Representation
+## The Controller
 
-RMR is an MVC variant.
-
-With RMR the controllers are organized around Http request definitions.
-
-Each file contains a single route definition, only one entry and all the code that the controllers needs to send response.
+- The controllers are organized according to HTTP requests
+- Each file contains a single definition of a controller entry
+- We structure the controller directories based on this
+- The file names refer to the HTTP entry
 
 File names represent HTTP Rest entries very clear :
 
@@ -60,12 +59,15 @@ The same concept can be done with other frameworks like GRPC or any message fram
 
 ### Pros
 
-- It simplifies ode structure from controllers
-- Orient our apps and business around clean code file separation (one responsability at the time), from the controller
-- It's easier to read and find
-- Test are simpler
-- Encapsulates the controller properly, not having route entries separated from implementations
-- Decouples route initializations, getting better maintainable code
+- Simplifies the code structure, clearly separating concepts
+- Achieves single responsibility per file
+- Directs our apps and business to perform specific tasks (one responsibility) from the controller
+- Focuses the code on simple responsibilities
+- Simplifies reading and searching for the controller
+- Simplifies testing
+- Correctly encapsulates each controller
+- Decouples route initialization, making its definition sustainable and maintainable
+- Allows clear reading of each controller's middleware
 
 ## Fundaments
 
